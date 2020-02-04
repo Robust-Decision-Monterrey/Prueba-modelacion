@@ -28,16 +28,16 @@ muskrat.plague <- function(t, state, parameters) {
     #auxiliares
     Muskrats.caught.per.trap <- Muskrat.population * Catch.rate.per.trap
     Total.traps <- Initial.licenses * Traps.per.license
-    
+
     #flujo
     New.muskrats <- Muskrat.population * New.muskrat.rate
     Muskrats.caught <- Muskrats.caught.per.trap * Total.traps
-    
+
     #estado
     dMuskrat.population <- (New.muskrats - Muskrats.caught)
-    
+
     list(c(dMuskrat.population), New.muskrats = New.muskrats, Muskrats.caught = Muskrats.caught )
-    
+
   })
 }
 
@@ -65,3 +65,7 @@ plot(out)
 plot(out2)
 
 plot(out3)
+
+plot(out,out2,out3)
+
+summary(out)
